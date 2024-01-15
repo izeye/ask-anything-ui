@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 
@@ -26,7 +27,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         'font-sans antialiased',
         GeistSans.variable,
         GeistMono.variable
-      )}>{children}</body>
+      )}>
+        <Toaster />
+        {children}
+      </body>
     </html>
   )
 }
