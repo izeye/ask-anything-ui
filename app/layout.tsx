@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Ask Anything',
   description: 'A service that can answer any questions.',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png'
+  }
 }
 
 export default function RootLayout({
