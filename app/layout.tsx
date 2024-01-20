@@ -5,6 +5,8 @@ import { GeistMono } from 'geist/font/mono'
 import type { Metadata } from 'next'
 import './globals.css'
 import { cn } from '@/lib/utils'
+import { Providers } from "@/components/providers";
+import { Header } from '@/components/header'
 
 export const metadata: Metadata = {
   title: 'Ask Anything',
@@ -29,7 +31,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
         GeistMono.variable
       )}>
         <Toaster />
-        {children}
+        <Providers
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex flex-col min-h-screen">
+            {/* @ts-ignore */}
+            <Header />
+            <main className="flex flex-col flex-1 bg-muted/50">{children}</main>
+          </div>
+        </Providers>
       </body>
     </html>
   )
